@@ -1,0 +1,51 @@
+<div class="auth-container">
+  
+  <!-- LEFT SIDE -->
+  <div class="left-panel">
+    <h2>Sign-In</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+      />
+       <small *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors">
+          Invalid email
+        </small>
+
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <small *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors">
+          Password format invalid
+        </small>
+
+
+      <button type="submit">Sign-In</button>
+    </form>
+
+    <p class="or">or Sign-In with</p>
+
+    <div class="social-icons">
+      <span class="icon fb">f</span>
+      <span class="icon g">G+</span>
+      <span class="icon in">in</span>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right-panel">
+    <h2>Welcome back!</h2>
+    <p>
+      Welcome back! We are so happy to have you here.
+      It's great to see you again. We hope you had a safe
+      and enjoyable time away.
+    </p>
+
+    <button routerLink="/Register" class="outline-btn">No account yet? Sign-Up.</button>
+  </div>
+
+</div>

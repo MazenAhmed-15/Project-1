@@ -1,0 +1,79 @@
+<section class="auth-wrapper">
+  <div class="auth-card">
+
+    <!-- LEFT: Signup Form -->
+    <div class="auth-form">
+      <h2>Sign-Up</h2>
+
+      <form
+        [formGroup]="RegisterForm"
+        (ngSubmit)="handleSubmit()"
+        class="form-body"
+      >
+
+        <input
+          type="text"
+          placeholder="Name"
+          formControlName="name"
+        />
+        <small *ngIf="RegisterForm.get('name')?.touched && RegisterForm.get('name')?.errors">
+          Name must be 3–20 characters
+        </small>
+
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+        <small *ngIf="RegisterForm.get('email')?.touched && RegisterForm.get('email')?.errors">
+          Invalid email
+        </small>
+
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="RPassword"
+        />
+        <small *ngIf="RegisterForm.get('RPassword')?.touched && RegisterForm.get('RPassword')?.errors">
+          Password format invalid
+        </small>
+
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+        />
+        <small *ngIf="RegisterForm.get('confirmPassword')?.touched && RegisterForm.get('confirmPassword')?.errors">
+          Passwords do not match
+        </small>
+
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          formControlName="PhoneNumber"
+        />
+        <small *ngIf="RegisterForm.get('PhoneNumber')?.touched && RegisterForm.get('PhoneNumber')?.errors">
+          Invalid phone number
+        </small>
+
+        <button type="submit" [disabled]="RegisterForm.invalid">
+          Signup
+        </button>
+
+      </form>
+    </div>
+
+    <!-- RIGHT: Gradient Panel -->
+    <div class="auth-info">
+      <h2>Welcome!</h2>
+      <p>
+        Create your account and start your journey with us.
+      </p>
+
+      <button routerLink="/Login" class="ghost-btn">
+        Already have an account?
+      </button>
+    </div>
+
+  </div>
+</section>

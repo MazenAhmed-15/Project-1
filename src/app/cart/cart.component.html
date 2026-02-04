@@ -1,0 +1,91 @@
+<div class="bg-light py-5">
+  <div class="container">
+
+    <h2 class="mb-4 fw-semibold">Shopping Cart</h2>
+
+    <div class="row g-4">
+
+      <!-- LEFT: Empty Cart -->
+      <div class="bg-white p-4" *ngIf="cartItems.length; else emptyCart">
+
+  <div class="d-flex mb-4" *ngFor="let item of cartItems">
+    <img [src]="item.image" width="90" class="me-3">
+
+    <div class="flex-grow-1">
+      <h6 class="fw-semibold mb-1">{{ item.name }}</h6>
+      <small class="text-muted">Size: {{ item.size }}</small>
+      <div class="fw-bold mt-1">
+        {{ item.price }} LE × {{ item.quantity }}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #emptyCart>
+<div class="col-lg">
+        <div class="bg-white p-5 text-center">
+
+          <h4 class="fw-semibold mb-3">Your cart is empty</h4>
+          <p class="text-muted mb-4">
+            Looks like you haven’t added any products to your cart yet.
+          </p>
+
+          <a routerLink="/Products" class="btn btn-dark px-4 py-2 rounded-pill">
+            Continue Shopping
+          </a>
+
+        </div>
+      </div>
+</ng-template>
+
+
+      <!-- RIGHT: Order Summary -->
+     <div class="d-flex justify-content-between mb-3 text-muted">
+  <span>Subtotal</span>
+  <span>{{ total }} LE</span>
+</div>
+
+<div class="d-flex justify-content-between mb-4 fw-semibold">
+  <span>Total</span>
+  <span>{{ total }} LE</span>
+</div>
+
+<button class="btn btn-dark w-100 py-3 rounded-pill"
+  [disabled]="!cartItems.length">
+  Checkout
+</button>
+
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Features -->
+<div class="bg-secondary bg-opacity-10 py-4">
+  <div class="container">
+    <div class="row text-center">
+
+      <div class="col-md-4">
+        <strong>Check Before (No Returns)</strong>
+        <p class="small text-muted mb-0">
+          If goods have problem
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <strong>Secure Payment</strong>
+        <p class="small text-muted mb-0">
+          100% Secure Payments
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <strong>24/7 Support</strong>
+        <p class="small text-muted mb-0">
+          Dedicated Support
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>

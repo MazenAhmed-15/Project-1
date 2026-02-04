@@ -1,0 +1,143 @@
+
+
+/* HERO */
+.hero {
+ min-height: calc(101vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  gap: 40px;
+
+  /* BACKGROUND IMAGE */
+  background-image: url('/assets/wo.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+
+  /* fallback background color */
+  background-color: #ededed;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-content small {
+  letter-spacing: 2px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  margin: 20px 0;
+  line-height: 1.1;
+}
+
+.hero-content p {
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.primary-btn {
+  padding: 14px 30px;
+  border: none;
+  background: #5d0404;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* HERO IMAGES */
+.hero-images {
+  flex: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.hero-christmas {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.category {
+  position: relative;
+  width: 220px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.category span {
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  color: #5d0404;
+  font-size: 18px;
+}
+
+/* IMAGE BACKGROUNDS */
+.woman {
+  background-image: url('/assets/Women.png');
+}
+.christmas {
+  background-image: url('/assets/christmas.png');
+}
+
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+       background-position: center bottom;
+    background-size: cover;
+    text-align: center;
+  }
+
+  .category span {
+    color: #e5e5e5;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+    color: #5d0404;
+  }
+
+  .hero-images {
+    justify-content: center;
+  }
+  .hero-christmas {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 30px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .category {
+    width: 160px;
+    height: 220px;
+  }
+  @media (max-width: 480px) {
+  .hero {
+    background-image: none;
+    background-color: #e5e5e5;
+  }
+}
+}

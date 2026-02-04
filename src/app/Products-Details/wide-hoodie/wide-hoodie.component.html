@@ -1,0 +1,106 @@
+<div class="container my-5">
+  <div class="row g-5">
+
+    <!-- LEFT: Images -->
+    <div class="col-md-6">
+
+      <!-- Main Image -->
+      <div class="bg-light p-4 text-center mb-3">
+      <img
+         [src]="mainImage"
+           class="img-fluid"
+            alt="Product">
+        </div>
+
+      <!-- Thumbnails -->
+      <div class="d-flex gap-2">
+  <div
+    class="bg-light p-2"
+    *ngFor="let img of images"
+    (click)="changeImage(img)"
+  >
+    <img
+      [src]="img"
+      width="70"
+      style="cursor: pointer;"
+    >
+  </div>
+</div>
+
+    </div>
+
+    <!-- RIGHT: Product Info -->
+    <div class="col-md-6">
+
+      <small class="text-muted fw-semibold">
+        WOMEN COLLECTION
+      </small>
+
+      <h3 class="fw-bold mt-2">
+        Paige Hoodie for Women
+      </h3>
+
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <span class="text-muted text-decoration-line-through">375 LE</span>
+        <span class="fs-4 fw-bold text-dark">300 LE</span>
+        <span class="badge bg-danger">20% OFF</span>
+      </div>
+
+      <!-- Sizes -->
+      <div class="mb-4">
+        <small class="fw-semibold d-block mb-2">
+          SELECT SIZE
+         <!--<a href="#" class="text-decoration-none ms-2 small">Size Chart</a>--> 
+        </small>
+
+        <div class="btn-group" role="group">
+         <input type="radio" class="btn-check" name="size" id="s"
+            checked (change)="selectedSize='S'">
+            <label class="btn btn-outline-secondary" for="s">S</label>
+
+            <input type="radio" class="btn-check" name="size" id="m"
+               (change)="selectedSize='M'">
+         <label class="btn btn-outline-secondary" for="m">M</label>
+
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="d-flex gap-3 mb-4">
+        <button class="btn btn-dark px-4" (click)="addToCart()">
+               🛒 ADD TO CART
+         </button>
+
+      </div>
+
+      <hr>
+
+      <!-- Product Details -->
+      <p class="small text-muted">
+        <strong>PRODUCT DETAILS</strong><br>
+        Paige Wide Hoodie, has a boat neck
+      </p>
+
+      <p class="small text-muted">
+        <strong>MATERIAL & CARE</strong><br>
+        • Cotton <br>
+        • Machine-wash
+      </p>
+
+      <p class="small text-muted">
+        <strong>SOLD BY</strong><br>
+        <a href="https://www.instagram.com/psbs_woman/" class="text-decoration-none">
+          PSBS Women
+        </a>
+      </p>
+
+      <ul class="small text-muted ps-3">
+        <li>100% Positive Feedback</li>
+        <li>All Products</li>
+        
+      </ul>
+
+    </div>
+
+  </div>
+</div>

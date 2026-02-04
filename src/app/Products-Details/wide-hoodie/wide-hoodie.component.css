@@ -1,0 +1,6 @@
+.bg-light img {
+  cursor: pointer;
+}
+.d-flex div {
+  border: 2px solid transparent;
+}
