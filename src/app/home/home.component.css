@@ -80,7 +80,7 @@
 
 /* IMAGE BACKGROUNDS */
 .woman {
-  background-image: url('assets/Women.png');
+  background-image: url('/assets/Women.png');
 }
 .christmas {
   background-image: url('assets/christmas.png');
