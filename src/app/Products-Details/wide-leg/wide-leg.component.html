@@ -1,25 +1,29 @@
 <div class="container my-5">
   <div class="row g-5">
 
-    <!-- LEFT: Images -->
-    <div class="col-md-6">
+     <div class="col-md-6">
 
       <!-- Main Image -->
       <div class="bg-light p-4 text-center mb-3">
-        <img src="assets/widJeans.jpg" class="img-fluid" alt="Product">
-      </div>
+      <img
+         [src]="mainImage"
+           class="img-fluid"
+            alt="Product">
+        </div>
 
       <!-- Thumbnails -->
       <div class="d-flex gap-2">
-        <div class="bg-light p-2">
-          <img src="assets/widJeans.jpg" width="70">
-        </div>
-        <div class="bg-light p-2">
-          <img src="assets/widJeans.jpg" width="70">
-        </div>
-        <div class="bg-light p-2">
-          <img src="assets/widJeans.jpg" width="70">
-        </div>
+  <div
+    class="bg-light p-2"
+    *ngFor="let img of images"
+    (click)="changeImage(img)"
+  >
+    <img
+      [src]="img"
+      width="70"
+      style="cursor: pointer;"
+    >
+  </div>
       </div>
     </div>
 

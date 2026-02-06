@@ -1,44 +1,70 @@
-/* GENERAL */
+.top-bar {
+  background: #5d0404;
+  padding: 15px 0;
+}
+
 .container {
-  max-width: 1200px;
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* TOP BAR */
-.top-bar {
-  background: #5d0404;
-  padding: 20px 40px;
-}
-
 .logo {
-  font-size: 22px;
-  font-weight: 600;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.logo span {
-  font-weight: 300;
-}
 
-nav {
+/* Desktop nav */
+.nav-links {
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 
-nav a {
-  cursor: pointer;
-  color: #555;
+.nav-links a,
+.account span {
+  color: white;
   text-decoration: none;
-}
-
-nav a.active {
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.account {
-  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #5d0404;
+  padding: 15px;
+}
+
+.mobile-menu a {
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+}
+
+/* 🔥 Responsive rules */
+@media (max-width: 768px) {
+  .nav-links,
+  .account {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
 }

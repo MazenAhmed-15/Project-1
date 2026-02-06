@@ -8,13 +8,29 @@ import { CartService } from 'src/services/cart.service';
   styleUrls: ['./wide-leg.component.css']
 })
 export class WideLegComponent {
+//changing between images
+
+    mainImage: string = '/assets/widJeans.jpg';
+
+  images: string[] = [
+    '/assets/widJeans.jpg',
+    '/assets/widJeans.jpg',
+    '/assets/widJeans.jpg'
+  ];
+
+  changeImage(img: string) {
+    this.mainImage = img;
+  }
+
+
+
     selectedSize = 'S';
 
   product = {
     id: 2, // ⚠️ unique ID
     name: 'Light Jeans for Women',
     price: 400,
-    image: 'assets/widJeans.jpg'
+    image: '/assets/widJeans.jpg'
   };
 
   constructor(
