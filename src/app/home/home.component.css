@@ -9,7 +9,7 @@
   gap: 40px;
 
   /* BACKGROUND IMAGE */
-  background-image: url('assets/wo.png');
+  background-image: url('./assets/wo.png');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
